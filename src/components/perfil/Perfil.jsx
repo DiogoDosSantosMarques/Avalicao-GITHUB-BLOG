@@ -50,9 +50,7 @@ const Perfil = () => {
       try {
 
         const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues", {
-          headers: {
-             'Authorization': `Bearer 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`
-          }
+          
         })
 
         setPosts(res.data)

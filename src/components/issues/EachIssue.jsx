@@ -23,9 +23,7 @@ const EachIssue = () => {
 
                 const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues/" + number, {
 
-                    headers: {
-                        'Authorization': `Bearer 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`
-                     }
+                    
                 
                 })
 
