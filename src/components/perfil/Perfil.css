@@ -10,6 +10,15 @@ header{
     font-weight: 500;
 }
 
+.issues {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Garante 2 cards por linha */
+    gap: 20px; /* Espaçamento entre os cards */
+    width: 60%; /* Alinha a largura das issues com a do header */
+    margin: 0 auto; /* Centraliza as issues na tela */
+    margin-top: 2%;
+  }
+
 .informacoes{
    
     margin-top: 3%;
@@ -27,16 +36,15 @@ header{
 
 .image img{
     display: flex;
-    height: 200px;
-    border: 1px solid black;
-    border-radius: 20px;
+    height: 170px;
+    border-radius: 100%;
    
 }
 
 .status{
     display: flex;
     gap: 50px;
-    margin-top: 10%
+    margin-top: 4%
 }
 
 .seguidores{

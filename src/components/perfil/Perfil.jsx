@@ -1,56 +1,91 @@
 import "./Perfil.css"
 
-import palmer from "../../images/colepalmer.png"
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 import axios from 'axios'
 import { useEffect, useState } from "react";
+import Issues from "../issues/Issues";
 
 const Perfil = () => {
 
-  const [perfil, setPerfil] = useState([])
+ 
+  const [perfil, setPerfil] = useState({})
+
+  const [posts, setPosts] = useState([])
 
 
-  const getDadosPerfil = async () => {
+  // Use Effect dos dados de perfil
+  useEffect(() => {
 
-    try {
+    const getDadosApi = async () => {
 
-      const res = await axios.get('api.github.com/users/DiogoDosSantosMarques')
+     try {
+
+      const res = await axios.get("https://api.github.com/users/DiogoDosSantosMarques")
 
       setPerfil(res.data)
       
-    } catch (error) {
+     } catch (error) {
 
       console.log(error)
       
+     }
+
     }
 
-  }
-
-
-  useEffect(() => {
-
-    getDadosPerfil()
+    getDadosApi()
 
   }, [])
 
+
+
+  // useEffect das issues
+  useEffect(() => {
+
+    const getIssues = async () => {
+
+      try {
+
+        const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues", {
+          headers: {
+             'Authorization': `Bearer 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`
+          }
+        })
+
+        setPosts(res.data)
+        
+      } catch (error) {
+
+        console.log(error)
+        
+      }
+
+    }
+
+    getIssues()
+
+  }, [])
+  
+
   return (
+
+    <>
     <header>
 
         <div className="image">
-        <img src={palmer} width={200} />
+        <img src={perfil.avatar_url} width={200} />
         </div>
 
         <div className="informacoes">
 
             
 
-        <h2></h2>
+        <h2>{perfil.name}</h2>
 
-        <p>Fala muito e não joga porra nenhuma, corre todo errado, não sabe dar um passe de 5 metros,
-        não sabe chutar no gol e o embasado é q ele não serve nem pra ser goleiro.
+        <p>{perfil.bio}
        </p>
        
 
@@ -58,13 +93,13 @@ const Perfil = () => {
 
                 <div className="seguidores">
                 <FontAwesomeIcon icon={faUser} size="1x" />
-                <p>1200 seguidores</p>
+                <p>{perfil.followers} seguidores</p>
                 </div>
 
                 <div className="seguindo">
 
                 <FontAwesomeIcon icon={faUser} size="1x" />
-                <p>1200 seguindo</p>
+                <p>{perfil.following} seguindo</p>
 
                 </div>
 
@@ -73,8 +108,18 @@ const Perfil = () => {
              
 
         </div>
-      
-    </header>
+
+       </header>
+
+       
+
+<div className="issues">
+    {posts && posts.map((post) => (
+      <Issues key={post.id} id={post.number} title={post.title} body={post.body} />
+    ))}
+  </div>
+
+    </>
   )
 }
 

@@ -1,25 +1,42 @@
+import { Link } from 'react-router-dom';
 import './Issues.css'
 import Card from 'react-bootstrap/Card';
+import PropTypes from 'prop-types';
 
-const Issues = () => {
+
+const Issues = ({id, title, body}) => {
+
+  const maxLength = 100
+
+  const isLong = body.length > maxLength;
+
+  const shortBody = isLong ? body.slice(0, maxLength) + '...' : body;
+
   return (
     <div className='posts'>
 
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '100%', backgroundColor: 'rgb(63, 63, 128)' }}>
       <Card.Body>
-        <Card.Title>Card Title</Card.Title>
+        <Card.Title style={{color: '#fff'}}>{title}</Card.Title>
    
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+        <Card.Text style={{color: '#000000'}}>
+          {shortBody}
         </Card.Text>
     
-        <Card.Link href="#">Another Link</Card.Link>
+        <Link to={`/issue/${id}`}>Ver mais</Link>
       </Card.Body>
     </Card>
       
     </div>
   )
 }
+
+
+
+Issues.propTypes = {
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+};
 
 export default Issues

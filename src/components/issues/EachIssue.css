@@ -1,0 +1,45 @@
+.info-issues{
+    background-color: rgb(63, 63, 128);
+    width: 60%;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    border: 2px solid ghostwhite;
+}
+
+.body-issues {
+    background-color: rgb(63, 63, 128);
+    width: 60%;
+    height: 40vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.body-issues p {
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
+    margin: 0; 
+}
+
+.coment{
+    display: flex;
+    gap: 25px;
+    margin-top: 5%;
+    margin-left: 5%;
+    font-size: 20px;
+    color: #fff;
+}
+
+.issue-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    font-size: 25px;
+    color: #fff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
