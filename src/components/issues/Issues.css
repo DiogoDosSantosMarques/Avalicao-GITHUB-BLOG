@@ -1,0 +1,12 @@
+.posts{
+    background-color: rgb(63, 63, 128);
+    width: 60%;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+}

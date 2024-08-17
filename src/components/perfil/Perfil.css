@@ -1,0 +1,50 @@
+header{
+    background-color: rgb(63, 63, 128);
+    width: 60%;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 5%;
+    display: flex;
+    border-radius: 30px;
+    color: white;
+    font-weight: 500;
+}
+
+.informacoes{
+   
+    margin-top: 3%;
+    width: 60%;
+   
+}
+
+.image{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.image img{
+    display: flex;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 20px;
+   
+}
+
+.status{
+    display: flex;
+    gap: 50px;
+    margin-top: 10%
+}
+
+.seguidores{
+    display: flex;
+    gap: 25px;
+}
+
+.seguindo{
+    display: flex;
+    gap: 20px;
+}
