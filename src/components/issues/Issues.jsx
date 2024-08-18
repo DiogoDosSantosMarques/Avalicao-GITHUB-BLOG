@@ -4,6 +4,7 @@ import Card from 'react-bootstrap/Card';
 import PropTypes from 'prop-types';
 
 
+
 const Issues = ({id, title, body}) => {
 
   const maxLength = 100

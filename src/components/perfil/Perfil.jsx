@@ -49,9 +49,7 @@ const Perfil = () => {
 
       try {
 
-        const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues", {
-          
-        })
+        const res = await axios.get(import.meta.env.VITE_TODAS_ISSUES)
 
         setPosts(res.data)
         

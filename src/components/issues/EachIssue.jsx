@@ -21,11 +21,7 @@ const EachIssue = () => {
 
             try {
 
-                const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues/" + number, {
-
-                    
-                
-                })
+                const res = await axios.get(import.meta.env.VITE_ISSUES_ID + number)
 
                 setIssues(res.data)
 
