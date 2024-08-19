@@ -16,6 +16,8 @@ const Perfil = () => {
 
   const [posts, setPosts] = useState([])
 
+  const [busca, setBusca] = useState("")
+
 
   // Use Effect dos dados de perfil
   useEffect(() => {
@@ -86,6 +88,7 @@ const Perfil = () => {
        
 
              <div className="status">
+              
 
                 <div className="seguidores">
                 <FontAwesomeIcon icon={faUser} size="1x" />
@@ -97,6 +100,8 @@ const Perfil = () => {
                 <FontAwesomeIcon icon={faUser} size="1x" />
                 <p>{perfil.following} seguindo</p>
 
+                
+
                 </div>
 
              </div>
@@ -106,6 +111,17 @@ const Perfil = () => {
         </div>
 
        </header>
+
+       <div className="search-bar">
+
+        <div className="publicacoes">
+          <h4>Publicações</h4>
+          <p>{posts.length} Publicações</p>
+        </div>
+
+        <input type="text" placeholder="Buscar Conteúdo" />
+
+       </div>
 
        
 
