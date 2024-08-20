@@ -16,7 +16,7 @@ const Perfil = () => {
 
   const [posts, setPosts] = useState([])
 
-  const [busca, setBusca] = useState("")
+  
 
 
   // Use Effect dos dados de perfil
@@ -51,7 +51,7 @@ const Perfil = () => {
 
       try {
 
-        const res = await axios.get(import.meta.env.VITE_TODAS_ISSUES)
+        const res = await axios.get("https://api.github.com/repos/DiogoDosSantosMarques/Avalicao-GITHUB-BLOG/issues")
 
         setPosts(res.data)
         
@@ -62,6 +62,7 @@ const Perfil = () => {
       }
 
     }
+    
 
     getIssues()
 
