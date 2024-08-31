@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom"
 import axios from "axios"
 import { useState, useEffect } from "react"
-
+import ReactMarkdown from 'react-markdown'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faComment } from '@fortawesome/free-solid-svg-icons';
 
@@ -73,7 +73,7 @@ const EachIssue = () => {
 
     <div className="body-issues">
 
-        <p>{issues.body}</p>
+        <ReactMarkdown>{issues.body}</ReactMarkdown>
 
     </div>
 
